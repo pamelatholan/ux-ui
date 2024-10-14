@@ -1,10 +1,55 @@
-/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #ffffff;
+    padding: 20px;
+    background-color: #f0f0f0;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fixed to 3 columns */
+    gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    background-color: white; /* Card background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: transform 0.2s ease; /* Smooth scaling on hover */
+}
+
+.grid-item:hover {
+    transform: scale(1.05); /* Slightly enlarge card on hover */
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px; /* Rounded corners for the image */
+    border-top-right-radius: 8px;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover .description {
+    transform: translateY(0);
+}
+
+
+/* top nav */
 
 header {
     background: #000000;
@@ -14,9 +59,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-
 }
-
 
 h1 {
     margin: 0;
@@ -88,144 +131,12 @@ nav a:hover {
     cursor: pointer;
 }
 
-section {
-    padding: 60px 20px;
-    /* max-width: 800px; */
-    margin: 0 auto;
-    background: #ffffff;
-    /* border-radius: 10px; */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #000000;
-    color: #ffffff;
-}
-
-.case-study {
-    margin-bottom: 20px;
-}
-
-.case-study img {
-    max-width: 100%;
-    /* border-radius: 10px; */
-}
-
-.hero {
-    padding: 10px 60px;
-    background: #7607c1;
-    color: #ffffff;
-    text-align: center;
-             
-}
-
-
-.single-line {
-    white-space: nowrap; /* Prevents text from wrapping */
-   
-}
-
-/* .hero h2 {
-    font-size: 2.5em;
-    margin: 0;
-    width: 100%;
-}
-
-.hero p {
-    font-size: 1.2em;
-    width: 100%;
-}
-
-.card {
-  border: 5px solid black;
-}
-
-.card-text {
-  font-family: "Khand", sans-serif;
-
-}
-
-p2 {
-  font-family: "Khand", sans-serif;
-  font-size: 20px;
-} */
-
-
-
-.cardcontainer {
-    display: flex;              
-    justify-content: center; 
-    flex-wrap: wrap;           /* Allows cards to wrap to the next line */
-    gap:10px;
-    
-}
-
-.card {
-    background-color: #f9f9f9; 
-    border: 1px solid #ccc;    
-    border-radius: 5px;        
-    padding: 20px;  
-    height: 300px;           
-    width: 30%;                /* Default width for larger screens */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    text-align: center;        
-    margin-bottom: 20px;      /* Space between rows */
-   
-}
-
-.card-image {
-    max-width: 100%;           
-    height: auto;              
-    border-radius: 5px;       
-}
-
-.card h2 {
-    margin: 10px 0;           
-}
-
-.card p {
-    margin: 0 0 15px;         
-}
-
-.card button {
-    background-color: #000000; 
-    color: white;              
-    border: none;              
-    padding: 10px 15px;       
-    border-radius: 5px;       
-    cursor: pointer; 
-    margin-top: 100px;
-             
-}
-
-.card button:hover {
-    background-color: #7607c1; 
-}
-
-
-html, body {
-    height: 100%;          /* Ensure the body takes the full height */
-    margin: 0;            /* Remove default margin */
-}
-
-.container {
-    display: flex;          /* Use Flexbox */
-    flex-direction: column; /* Stack children vertically */
-    min-height: 100vh;     /* Minimum height of the container is full viewport height */
-}
-
-main {
-    flex: 1;               /* Allow main to grow and fill available space */
-    /* padding: 20px;        Add padding for content */
+.hamburger {
+    display: block; /* Show hamburger on mobile */
 }
 
 
 
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     .hero h2 {
         font-size: 2em;
@@ -328,5 +239,32 @@ main {
 
     .card {
         width: 80%;            /* Cards take up 80% of the width on tablet screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
     }
 }
