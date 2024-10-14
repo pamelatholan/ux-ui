@@ -1,0 +1,333 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+header {
+    background: #000000;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+    margin: 20px 0;
+    align-items: center; 
+    
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex; /* Display items in a row */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;                 /* Allows nav links to take remaining space */
+    justify-content: center;       /* Center nav links */
+}
+    
+
+.nav-links li {
+    margin-left: 20px;
+    
+
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+   
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;                 /* Keep items in a row */
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.3s ease-in-out; /* Smooth transition */
+}
+
+.nav-links.active {
+    display: flex;                 /* Show links when active */
+}
+
+.nav-links a:hover {
+    /* background-color: rgba(255, 255, 255, 0.2); Change background on hover */
+    color: #7607c1;              /* Change text color on hover */
+}
+
+
+.hamburger {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+section {
+    padding: 60px 20px;
+    /* max-width: 800px; */
+    margin: 0 auto;
+    background: #ffffff;
+    /* border-radius: 10px; */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000000;
+    color: #ffffff;
+}
+
+.case-study {
+    margin-bottom: 20px;
+}
+
+.case-study img {
+    max-width: 100%;
+    /* border-radius: 10px; */
+}
+
+.hero {
+    padding: 10px 60px;
+    background: #7607c1;
+    color: #ffffff;
+    text-align: center;
+        
+}
+
+.single-line {
+    white-space: nowrap; /* Prevents text from wrapping */
+   
+}
+
+/* .hero h2 {
+    font-size: 2.5em;
+    margin: 0;
+    width: 100%;
+}
+
+.hero p {
+    font-size: 1.2em;
+    width: 100%;
+}
+
+.card {
+  border: 5px solid black;
+}
+
+.card-text {
+  font-family: "Khand", sans-serif;
+
+}
+
+p2 {
+  font-family: "Khand", sans-serif;
+  font-size: 20px;
+} */
+
+
+
+.cardcontainer {
+    display: flex;              
+    justify-content: center; 
+    flex-wrap: wrap;           /* Allows cards to wrap to the next line */
+    gap:10px;
+    
+}
+
+.card {
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc;    
+    border-radius: 5px;        
+    padding: 20px;  
+    height: 300px;           
+    width: 30%;                /* Default width for larger screens */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    text-align: center;        
+    margin-bottom: 20px;      /* Space between rows */
+   
+}
+
+.card-image {
+    max-width: 100%;           
+    height: auto;              
+    border-radius: 5px;       
+}
+
+.card h2 {
+    margin: 10px 0;           
+}
+
+.card p {
+    margin: 0 0 15px;         
+}
+
+.card button {
+    background-color: #000000; 
+    color: white;              
+    border: none;              
+    padding: 10px 15px;       
+    border-radius: 5px;       
+    cursor: pointer; 
+    margin-top: 165px;
+             
+}
+
+.card button:hover {
+    background-color: #7607c1; 
+}
+
+
+html, body {
+    height: 100%;          /* Ensure the body takes the full height */
+    margin: 0;            /* Remove default margin */
+}
+
+.container {
+    display: flex;          /* Use Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh;     /* Minimum height of the container is full viewport height */
+}
+
+main {
+    flex: 1;               /* Allow main to grow and fill available space */
+    /* padding: 20px;        Add padding for content */
+}
+
+
+
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2em;
+    }
+    
+    .hero p {
+        font-size: 1em;
+    }
+
+    .nav {
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 50px; /* Position under navbar */
+        right: 0;
+        background-color: #333; /* Background color */
+        width: 100%; /* Full width */
+    }
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 50px; /* Position under navbar */
+        right: 0;
+        background-color: #333; /* Background color */
+        width: 100%; /* Full width */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+    
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    section {
+        padding: 40px 10px;
+    }
+
+    .card {
+        width: 45%;            /* Cards take up 45% of the width on medium screens */
+        
+    }
+
+    .single-line {
+        white-space:normal;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5em;
+    }
+    
+    .hero p {
+        font-size: 0.9em;
+    }
+    
+    nav a {
+        font-size: 0.9em;
+    }
+    
+    section {
+        padding: 30px 5px;
+    }
+
+    .card {
+        width: 100%;           /* Cards take full width on small screens */
+
+    }
+   
+}
+
+/* Media Query for Tablets */
+@media (max-width: 1024px) {
+    .hero h2 {
+        font-size: 2.5em;
+    }
+    
+    .hero p {
+        font-size: 1.5em;
+    }
+    
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    section {
+        padding: 40px 10px;
+    }
+
+    .card {
+        width: 80%;            /* Cards take up 80% of the width on tablet screens */
+    }
+}
